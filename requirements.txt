@@ -1,0 +1,6 @@
+
+SQLAlchemy==2.0.36
+streamlit==1.40.0
+streamlit-authenticator==0.4.1
+PyJWT==2.9.0
+python-dotenv==1.0.1
