@@ -61,8 +61,8 @@ def verify_token(token: str):
 
 # Función para obtener las credenciales del .env
 def get_credentials():
-    username = st.secrets["your_secret"]["streamlit_user"]
-    password = st.secrets["your_secret"]["streamlit_pass"]
+    username = st.secrets["streamlit_user"]
+    password = st.secrets["streamlit_pass"]
 
     return username, password
 
