@@ -145,6 +145,7 @@ def main():
                 st.error("Por favor completa todos los campos.")
 
     # Ver Tareas
+    # Ver Tareas
     elif option == "Ver Tareas":
         st.header("Lista de Tareas")
 
@@ -172,6 +173,13 @@ def main():
                             session.commit()
                             st.success(f"Tarea {task.title} modificada exitosamente!")
 
+                    # Botón para eliminar la tarea
+                    if st.button(f"Eliminar {task.title}", key=f"delete_{task.id}"):
+                        session.delete(task)
+                        session.commit()
+                        st.success(f"Tarea '{task.title}' eliminada exitosamente.")
+                        # Recargar la lista de tareas después de eliminar
+                        tasks = session.query(Task).all()  # Actualizar la lista de tareas
         else:
             st.write("No se encontraron tareas.")
 
